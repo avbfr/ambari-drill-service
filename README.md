@@ -24,7 +24,7 @@ Ambari service to run and manage Apache Drill. For more information about Apache
 Download the Drill Service:
 
 <code>
-git clone https://github.com/dvergari/ambari-drill-service.git /var/lib/ambari-server/resources/stacks/HDP/2.4/services/DRILL 
+git clone https://github.com/avbfr/ambari-drill-service.git /var/lib/ambari-server/resources/stacks/HDP/2.6/services/DRILL 
 </code>
 
 Restart ambari
