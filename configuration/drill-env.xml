@@ -23,7 +23,7 @@
   </property>
   <property>
     <name>drill_heap_size</name>
-    <value>4G</value>
+    <value>1G</value>
   </property>
   <property>
     <name>content</name>

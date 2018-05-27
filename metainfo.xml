@@ -13,11 +13,25 @@
                     <displayName>Drill Master</displayName>
                     <category>MASTER</category>
                     <cardinality>1+</cardinality>
+                    <dependencies>
+                        <dependency>
+                            <name>HDFS/HDFS_CLIENT</name>
+                            <scope>cluster</scope>
+                        </dependency>
+                        <dependency>
+                            <name>ZOOKEEPER/ZOOKEEPER_SERVER</name>
+                            <scope>cluster</scope>
+                        </dependency>
+                    </dependencies>
                     <commandScript>
                         <script>scripts/drill.py</script>
                         <scriptType>PYTHON</scriptType>
                         <timeout>10000</timeout>
                     </commandScript>
+                    <requiredServices>
+                        <service>ZOOKEEPER</service>
+                        <service>HDFS</service>
+                    </requiredServices>
                     <configFiles>
                       <configFile>
                         <type>xml</type>
