@@ -1,0 +1,6 @@
+{
+  "general_deps" : {
+    "_comment" : "dependencies for drill",
+    "DRILL-START": ["ZOOKEEPER_SERVER-START"]
+  }
+}

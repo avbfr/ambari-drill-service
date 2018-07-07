@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+ Copyright (c) 2016 EMC Corporation.
+ All rights reserved.  This is an UNPUBLISHED work, and
+ comprises proprietary and confidential information of EMC.
+ Unauthorized use, disclosure, and distribution are strictly
+ prohibited.  Use, duplication, or disclosure of the software
+ and documentation by the U.S. Government is subject to
+ restrictions set forth in a license agreement between the
+ Government and EMC or other written agreement specifying
+ the Government's rights to use the software and any applicable
+ FAR provisions, such as FAR 52.227-19.
+-->
+<configuration>
+  <property>
+    <name>drill.https.port</name>
+    <value>8047</value>
+    <description>This is the http(s) on which drill web console listens.</description>
+  </property>
+</configuration>

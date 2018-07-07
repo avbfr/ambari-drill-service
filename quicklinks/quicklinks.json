@@ -1,0 +1,30 @@
+{
+	"name": "default",
+	"description": "default quick links configuration",
+	"configuration": {
+		"protocol": {
+			"type": "http",
+			"checks":[
+				{
+					"site":"drill-console"
+				}
+			]
+		},
+
+		"links": [
+			{
+				"name": "drill-console",
+				"label": "Apache Drill UI",
+				"requires_user_name": "false",
+				"component_name": "DRILL_MASTER",
+				"url": "%@://%@:%@",
+				"port":{
+					"https_property": "drill.https.port",
+					"https_default_port": "8047",
+					"regex": "^(\\d+)$",
+					"site":"drill-console"
+				}
+			}
+		]
+	}
+}

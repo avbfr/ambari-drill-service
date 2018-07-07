@@ -23,6 +23,12 @@
             <displayName>Drill (Custom)</displayName>
             <comment>Schema-free SQL Query Engine for Hadoop, NoSQL and Cloud Storage</comment>
             <version>1.13.0</version>
+            <quickLinksConfigurations>
+                <quickLinksConfiguration>
+                    <fileName>quicklinks.json</fileName>
+                    <default>true</default>
+                </quickLinksConfiguration>
+            </quickLinksConfigurations>
             <components>
                 <component>
                     <name>DRILL_MASTER</name>
@@ -32,14 +38,18 @@
                     <dependencies>
                         <dependency>
                             <name>HDFS/HDFS_CLIENT</name>
-                            <scope>cluster</scope>
+                            <scope>host</scope>
+                            <enabled>true</enabled>
+                            <co-locate>DRILL/DRILL_MASTER</co-locate>
                             <auto-deploy>
                                 <enabled>true</enabled>
                             </auto-deploy>
                         </dependency>
                         <dependency>
                             <name>ZOOKEEPER/ZOOKEEPER_SERVER</name>
-                            <scope>cluster</scope>
+                            <scope>host</scope>
+                            <enabled>true</enabled>
+                            <co-locate>DRILL/DRILL_MASTER</co-locate>
                             <auto-deploy>
                                 <enabled>true</enabled>
                             </auto-deploy>
@@ -50,10 +60,6 @@
                         <scriptType>PYTHON</scriptType>
                         <timeout>10000</timeout>
                     </commandScript>
-                    <requiredServices>
-                        <service>ZOOKEEPER</service>
-                        <service>HDFS</service>
-                    </requiredServices>
                     <configFiles>
                       <configFile>
                         <type>xml</type>
@@ -73,6 +79,9 @@
                     </configFiles>
                 </component>                
             </components>
+            <requiredServices>
+                <service>ZOOKEEPER</service>
+            </requiredServices>
           <configuration-dependencies>
             <config-type>drill-env</config-type>
             <config-type>drill-override</config-type>
