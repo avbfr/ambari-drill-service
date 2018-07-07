@@ -3,6 +3,6 @@
   "_comment" : "blockedRole-blockedCommand: [blockerRole1-blockerCommand1, blockerRole2-blockerCommand2, ...]",
   "general_deps" : {
     "_comment" : "dependencies for drill",
-    "DRILL_MASTER-START" : ["ZOOKEEPER_SERVER-START"]
+    "DRILL_MASTER-START" : ["NAMENODE-START", "ZOOKEEPER_SERVER-START"]
   }
 }
