@@ -1,8 +1,6 @@
 # ambari-drill-service
 
-!!! This is a Work In Progress repository !!!
-
-Ambari service for Apache Drill
+Ambari service for Apache Drill v0.9-BETA1
 
 Ambari service to run and manage Apache Drill. For more information about Apache Drill visit <a href>https://drill.apache.org/</a>
 
@@ -16,8 +14,8 @@ Ambari service to run and manage Apache Drill. For more information about Apache
     - Allows to install Apache Drill on an Ambari-managed cluster <br>
     - Edit drill-overrides.conf and drill-env.sh via ambari <br>
     - Integration with zookeeper <br>
-
-
+    - Drill Console Quick Links<br>
+    - Choose wich version of drill you want to install (by default 1.14.0)<br>
 
 ### Setup
 

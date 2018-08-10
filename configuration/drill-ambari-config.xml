@@ -3,13 +3,19 @@
 
 <configuration>
   <property>
+    <name>drill_install_version</name>
+    <value>1.14.0</value>
+    <description>Drill version to install (only used when installing service)</description>
+  </property>
+  <property>
     <name>drill_install_dir</name>
     <value>/opt/apache-drill</value>
     <description>Location to install Drill</description>
   </property>
   <property>
     <name>drill_temp_file</name>
-    <value>/tmp/apache-drill.tar.gz</value>
+    <value>/tmp/apache-drill-1.14.0.tar.gz</value>
+    <description>Drill Archive to deploy (Kept if exists, downloaded from Drill WebSite otherwise)</description>
   </property>
   <property>
     <name>hadoop_core_site</name>

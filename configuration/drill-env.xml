@@ -23,6 +23,11 @@
     <description>Location in which save pid files</description>
   </property>
   <property>
+    <name>drill_config_dir</name>
+    <value>/usr/drill/conf</value>
+    <description>Location of configuration files</description>
+  </property>
+  <property>
     <name>drill_max_direct_memory</name>
     <value>8G</value>
   </property>
@@ -53,6 +58,7 @@ export JAVA=${JAVA_HOME}/bin/java
 
 export DRILL_PID_DIR={{drill_run_dir}}
 export DRILL_LOG_DIR={{drill_log_dir}}
+export DRILL_CONF_DIR={{drill_config_dir}}
 
 DRILL_MAX_DIRECT_MEMORY="{{drill_max_direct_memory}}"
 DRILL_HEAP="{{drill_heap_size}}"
