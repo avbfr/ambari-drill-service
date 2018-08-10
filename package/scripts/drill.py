@@ -49,7 +49,7 @@ class Master(Script):
   def status(self, env):
     import params
     env.set_params(params)
-    check_process_status(params.drill_pid_file)
+    check_process_status(params.drill_run_dir + '/drillbit.pid')
 
   def configure(self, env, isInstall=False):
     import params

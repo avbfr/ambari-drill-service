@@ -32,3 +32,11 @@ ambari-server restart
 </code>
 
 Now you can install Drill by clicking on "Add Service" button in Ambari
+
+### Uninstall
+
+Stop the Drill Service from Ambari and delete Service
+
+- Delete "drill_install_dir" and "drill_run_dir"
+- Keep "drill_config_dir" if you want to install a new version otherwise, delete it
+- Delete "drill_temp_file"
