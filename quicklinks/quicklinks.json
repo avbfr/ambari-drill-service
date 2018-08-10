@@ -3,9 +3,11 @@
 	"description": "default quick links configuration",
 	"configuration": {
 		"protocol": {
-			"type": "http",
+			"type": "https",
 			"checks":[
 				{
+					"property":"drill.http.policy",
+					"desired":"HTTPS_ONLY",
 					"site":"drill-console"
 				}
 			]
@@ -21,6 +23,8 @@
 				"port":{
 					"https_property": "drill.https.port",
 					"https_default_port": "8047",
+					"http_property": "drill.http.port",
+					"http_default_port": "8047",
 					"regex": "^(\\d+)$",
 					"site":"drill-console"
 				}

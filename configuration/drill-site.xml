@@ -14,8 +14,18 @@
 -->
 <configuration>
   <property>
+    <name>drill.http.policy</name>
+    <value>HTTP_ONLY</value>
+    <description>Should be HTTP, HTTPS, HTTPS_ONLY or HTTP_ONLY</description>
+  </property>
+  <property>
+    <name>drill.http.port</name>
+    <value>8047</value>
+    <description>This is the http on which drill web console listens.</description>
+  </property>
+  <property>
     <name>drill.https.port</name>
     <value>8047</value>
-    <description>This is the http(s) on which drill web console listens.</description>
+    <description>This is the https on which drill web console listens.</description>
   </property>
 </configuration>

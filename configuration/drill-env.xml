@@ -18,6 +18,11 @@
     <description>Location in which save log files</description>
   </property>
   <property>
+    <name>drill_run_dir</name>
+    <value>/var/run/drill</value>
+    <description>Location in which save pid files</description>
+  </property>
+  <property>
     <name>drill_max_direct_memory</name>
     <value>8G</value>
   </property>
@@ -43,10 +48,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+export JAVA_HOME={{java64_home}}
+export JAVA=${JAVA_HOME}/bin/java
+
+export DRILL_PID_DIR={{drill_run_dir}}
+export DRILL_LOG_DIR={{drill_log_dir}}
+
 DRILL_MAX_DIRECT_MEMORY="{{drill_max_direct_memory}}"
 DRILL_HEAP="{{drill_heap_size}}"
 
-export DRILL_JAVA_OPTS="-Xms$DRILL_HEAP -Xmx$DRILL_HEAP -XX:MaxDirectMemorySize=$DRILL_MAX_DIRECT_MEMORY -XX:ReservedCodeCacheSize=1G -Ddrill.exec.enable-epoll=true"
+export DRILL_JAVA_OPTS="-Xms${DRILL_HEAP} -Xmx${DRILL_HEAP} -XX:MaxDirectMemorySize=${DRILL_MAX_DIRECT_MEMORY} -XX:ReservedCodeCacheSize=1G -Ddrill.exec.enable-epoll=true"
 
 # Class unloading is disabled by default in Java 7
 # http://hg.openjdk.java.net/jdk7u/jdk7u60/hotspot/file/tip/src/share/vm/runtime/globals.hpp#l1622

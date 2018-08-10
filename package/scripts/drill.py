@@ -27,7 +27,7 @@ class Master(Script):
 
     self.create_linux_user(params.drill_user, params.drill_group)
 
-    Directory([params.drill_install_dir,params.drill_log_dir,'/data/sample'], mode=0755, owner=params.drill_user, group=params.drill_group, create_parents=True)
+    Directory([params.drill_install_dir,params.drill_log_dir,params.drill_run_dir,'/data/sample'], mode=0755, owner=params.drill_user, group=params.drill_group, create_parents=True)
     File(params.drill_log_file, mode=0644, owner=params.drill_user, group=params.drill_group, content='')
     
     if not os.path.exists(params.drill_temp_file):

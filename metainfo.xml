@@ -20,7 +20,7 @@
     <services>
         <service>
             <name>DRILL</name>
-            <displayName>Drill (Custom)</displayName>
+            <displayName>Drill (Apache)</displayName>
             <comment>Schema-free SQL Query Engine for Hadoop, NoSQL and Cloud Storage</comment>
             <version>1.13.0</version>
             <quickLinksConfigurations>
