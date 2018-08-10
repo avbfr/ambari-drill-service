@@ -32,7 +32,6 @@ drill_run_dir = config['configurations']['drill-env']['drill_run_dir']
 drill_config_dir = config['configurations']['drill-env']['drill_config_dir']
 drill_env_content = config['configurations']['drill-env']['content']
 drill_log_file = os.path.join(drill_log_dir,'drill-install.log')
-drill_pid_file = os.path.join(drill_run_dir,'drillbit.pid')
 
 ## drill-override.xml
 cluster_id = config['configurations']['drill-override']['cluster_id']

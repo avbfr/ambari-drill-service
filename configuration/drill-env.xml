@@ -19,7 +19,7 @@
   </property>
   <property>
     <name>drill_run_dir</name>
-    <value>/var/run/drill</value>
+    <value>/run/drill</value>
     <description>Location in which save pid files</description>
   </property>
   <property>

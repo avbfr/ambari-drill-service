@@ -22,7 +22,7 @@
             <name>DRILL</name>
             <displayName>Drill (Apache)</displayName>
             <comment>Schema-free SQL Query Engine for Hadoop, NoSQL and Cloud Storage</comment>
-            <version>1.13.0</version>
+            <version>1.x.x</version>
             <quickLinksConfigurations>
                 <quickLinksConfiguration>
                     <fileName>quicklinks.json</fileName>
