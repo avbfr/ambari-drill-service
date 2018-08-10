@@ -60,7 +60,7 @@ class Master(Script):
 
     if isInstall:
       Execute('chown -R ' + params.drill_user + ':' + params.drill_group + ' ' + params.drill_install_dir)
-      Execute('ln -sf ' + params.drill_install_dir + '/apache-drill-' + params.drill_install_version + ' ' + params.drill_install_dir + 'apache-drill-current')
+      Execute('ln -sf ' + params.drill_install_dir + '/apache-drill-' + params.drill_install_version + ' ' + params.drill_install_dir + '/apache-drill-current')
 
     File(params.drill_install_dir + '/apache-drill-' + params.drill_install_version + '/conf/drill-override.conf', content=drill_override_content, owner=params.drill_user, group=params.drill_group)
     File(params.drill_install_dir + '/apache-drill-' + params.drill_install_version + '/conf/drill-env.sh', content=drill_env_content, owner=params.drill_user, group=params.drill_group)
