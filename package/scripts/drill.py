@@ -44,12 +44,13 @@ class Master(Script):
   def start(self, env):
     import params
     self.configure(env)
+    Directory([params.drill_run_dir], mode=0755, owner=params.drill_user, group=params.drill_group, create_parents=True)
     Execute(params.drill_install_dir + '/apache-drill-' + params.drill_install_version + '/bin/drillbit.sh start', user=params.drill_user)
 
   def status(self, env):
-    import params
-    env.set_params(params)
-    check_process_status(params.drill_run_dir + '/drillbit.pid')
+    import params_status
+    env.set_params(params_status)
+    check_process_status(params_status.drill_run_dir + '/drillbit.pid')
 
   def configure(self, env, isInstall=False):
     import params
