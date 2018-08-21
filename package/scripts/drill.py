@@ -79,6 +79,8 @@ class Master(Script):
               owner=params.drill_user,
               group=params.drill_group,
               mode=0644)
+    Execute('hdfs dfs -mkdir -p /user/drill', user='hdfs')
+    Execute('hdfs dfs -chown -R ' + params.drill_user + ':' + params.drill_group + ' /user/drill', user='hdfs')
     Execute('hdfs dfs -mkdir -p ' + params.sys_store_provider_zk_blobroot, user='hdfs')
     Execute('hdfs dfs -chown -R ' + params.drill_user + ':' + params.drill_group + ' ' + params.sys_store_provider_zk_blobroot, user='hdfs')
 
