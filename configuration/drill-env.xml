@@ -24,7 +24,7 @@
   </property>
   <property>
     <name>drill_config_dir</name>
-    <value>/usr/drill/conf</value>
+    <value>/etc/drill/conf</value>
     <description>Location of configuration files</description>
   </property>
   <property>

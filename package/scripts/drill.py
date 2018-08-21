@@ -39,13 +39,13 @@ class Master(Script):
   def stop(self, env):
     import params
     self.configure(env)
-    Execute(params.drill_install_dir + '/apache-drill-' + params.drill_install_version + '/bin/drillbit.sh stop', user=params.drill_user)
+    Execute('export JAVA_HOME=' + params.java_home + ';' + params.drill_install_dir + '/apache-drill-' + params.drill_install_version + '/bin/drillbit.sh --config ' + params.drill_config_dir + ' stop', user=params.drill_user)
 
   def start(self, env):
     import params
     self.configure(env)
     Directory([params.drill_run_dir], mode=0755, owner=params.drill_user, group=params.drill_group, create_parents=True)
-    Execute(params.drill_install_dir + '/apache-drill-' + params.drill_install_version + '/bin/drillbit.sh start', user=params.drill_user)
+    Execute('export JAVA_HOME=' + params.java_home + ';' + params.drill_install_dir + '/apache-drill-' + params.drill_install_version + '/bin/drillbit.sh --config ' + params.drill_config_dir + ' start', user=params.drill_user)
 
   def status(self, env):
     import params_status
@@ -63,8 +63,8 @@ class Master(Script):
       Execute('chown -R ' + params.drill_user + ':' + params.drill_group + ' ' + params.drill_install_dir)
       Execute('ln -sf ' + params.drill_install_dir + '/apache-drill-' + params.drill_install_version + ' ' + params.drill_install_dir + '/apache-drill-current')
 
-    File(params.drill_install_dir + '/apache-drill-' + params.drill_install_version + '/conf/drill-override.conf', content=drill_override_content, owner=params.drill_user, group=params.drill_group)
-    File(params.drill_install_dir + '/apache-drill-' + params.drill_install_version + '/conf/drill-env.sh', content=drill_env_content, owner=params.drill_user, group=params.drill_group)
+    File(params.drill_config_dir + '/drill-override.conf', content=drill_override_content, owner=params.drill_user, group=params.drill_group)
+    File(params.drill_config_dir + '/drill-env.sh', content=drill_env_content, owner=params.drill_user, group=params.drill_group)
     XmlConfig("hdfs-site.xml", 
               conf_dir=params.drill_config_dir,
               configurations=params.config['configurations']['hdfs-site'],
