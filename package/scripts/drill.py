@@ -39,7 +39,7 @@ class Master(Script):
   def stop(self, env):
     import params
     self.configure(env)
-    Execute('export JAVA_HOME=' + params.java_home + ';' + params.drill_install_dir + '/apache-drill-' + params.drill_install_version + '/bin/drillbit.sh --config ' + params.drill_config_dir + ' stop', user=params.drill_user)
+    Execute('export JAVA_HOME=' + params.java_home + ';' + params.drill_install_dir + '/apache-drill-' + params.drill_install_version + '/bin/drillbit.sh --config ' + params.drill_config_dir + ' stop' + '; exit 0', user=params.drill_user)
 
   def start(self, env):
     import params
